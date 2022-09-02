@@ -68,7 +68,7 @@ HELP_MESSAGE = "Hello there, {}!\n\n" +\
     "2. <b>Delete message</b>: You can select a message and type /delete\n" +\
     "3. <b>Edit message</b>: You can edit your message to your dragon / trainer\n" +\
     "4. <b>Media files</b>: Supported files are <i>audio</i>, <i>document</i>, <i><b>photo</b></i>, <i><b>sticker</b></i>, <i>videos</i>, <i>video note</i> and <i>voice</i>\n\n" +\
-    "Please message @lethiciarenissa if you need technical assistance!\n" +\
+    "Please message @jeyvia if you need technical assistance!\n" +\
     "Thank you and we hope you'll have fun throughout this game! :)"
 GAME_RULES_MESSAGE = "Rules of Dragon and Trainer " + DRAGON_EMOJI + "\n\n" +\
     "Each of you who participated will be assigned a Trainer and a Dragon. " +\
@@ -83,7 +83,7 @@ GAME_RULES_MESSAGE = "Rules of Dragon and Trainer " + DRAGON_EMOJI + "\n\n" +\
     "3: Pranks are fine, but do take care of what your dragon says is <b>OFF LIMITS</b>\n\n" +\
     "<u>Dos</u> " + SMILE_EMOJI + "\n" +\
     "• Observe the Tolerance Levels your dragons have indicated.\n" +\
-    "• Gain consent from your dragon before entering their rooms. (You can ask using the @DragonTrainerBot via the chat function)\n" +\
+    "• Gain consent from your dragon before entering their rooms. (You can ask using the @DragonandTrainerBot via the chat function)\n" +\
     "• Do take note of your dragon’s dislikes and OFF LIMITS details and adhere to them (Try to <b>avoid</b> doing anything your dragon dislikes, especially anything they have declared OFF LIMITS)\n" +\
     "• <b>Balance out the pranks with gifts - moderation is key!</b>\n" +\
     "• Try (your best) to <b>keep your identity hidden</b>.\n" +\
@@ -102,7 +102,7 @@ GAME_RULES_MESSAGE = "Rules of Dragon and Trainer " + DRAGON_EMOJI + "\n\n" +\
     "NO MOVING OF FURNITURE OUT OF THE ROOMS and AVOID MOVING of furniture\n" +\
     "And RESTRICT pranks to <b>YOUR OWN DRAGON</b> (avoid performing pranks on others’ dragons as any incidents that arise due to your unannounced pranks would implicate other trainers)\n\n" +\
     "Do adhere to the rules as stated above, as well as the basic housing regulations of RC4.\n\n" +\
-    "If you have any other questions, concerns or doubts, don’t be afraid to reach out to @limshoeshoe, @lethiciarenissa and @hartantio! We hope you have fun and make new friends as well!\n\n" +\
+    "If you have any other questions, concerns or doubts, don’t be afraid to reach out to @moncherrin, @seanhanbaobao and @jeyvia! We hope you have fun and make new friends as well!\n\n" +\
     "Love,\n" +\
     "Draco House Comm" + BLUE_HEART_EMOJI
 WELCOME_MESSAGE = "Dear {name},\n\n\n"\
@@ -110,7 +110,7 @@ WELCOME_MESSAGE = "Dear {name},\n\n\n"\
     "\"Esteemed Trainer, you are tasked to train dragon ‘{dragon_name}’ for the next 2 and a half weeks. Slowly approach the dragon at unit {dragon_room_number} to tame it and teach it new skills.\n\n"\
     "Your dragon likes ‘{dragon_likes}’ but it really dislikes ‘{dragon_dislikes}‘.\n\n"\
     "‘{dragon_requests}' is stated as off limits. Take careful note of these as you venture on your quest to tame your dragon, for there may be consequences.\n\nThe difficulty of training is LEVEL {dragon_level:d}.\n\n\n"\
-    "We, @limshoeshoe, @lethiciarenissa and @hartantio, will watch over all of you trainers throughout the training. Do contact us should you need assistance in taming your dragon.\n\n\n"\
+    "We, @moncherrin, @seanhanbaobao and @jeyvia, will watch over all of you trainers throughout the training. Do contact us should you need assistance in taming your dragon.\n\n\n"\
     "Set forth young one and be the best dragon tamer of AreSeaFore Draco.\"\n\n\n"\
     "*Game of Thrones Music Intensifies*"
 STATUS = "Trainer Status: {trainer_status}\n"\
