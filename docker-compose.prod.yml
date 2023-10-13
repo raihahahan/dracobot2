@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: dragon_trainer
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - backend
+  telegram-app:
+    image: mraihandev/dracobot2-telegram-app:1.0.0
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app # Mount your application code into the container
+    environment:
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN_PROD}
+      DB_USERNAME: ${DB_USERNAME_PROD}
+      DB_PASSWORD: ${DB_PASSWORD_PROD}
+      DB_HOST: db
+      DB_NAME: dragon_trainer
+      DB_PORT: 3306
+    networks:
+      - backend
+    command: sh -c "sleep 9 && python main.py"
+
+volumes:
+  mysql_data:
+
+networks:
+  backend:
+    driver: bridge
+    name: backend
