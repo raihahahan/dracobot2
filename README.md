@@ -41,7 +41,7 @@ There are 2 ways to run the bot: Docker or locally.
 2. Run `docker ps`
 3. Copy the container name of the database service
 4. Run `docker exec -it {container-name} mysql -u root -p`. Enter the database password when prompted.
-5. In `mysql` client, run `USE dragon_trainer;` followed by `SHOW TABLES;`. The tables should be properly configured if telegram-app service runs successfully.
+5. In `mysql` client, run `USE dragon_trainer;` (`USE dragon_trainer_prod` for production) followed by `SHOW TABLES;`. The tables should be properly configured if telegram-app service runs successfully.
 
 ### Hosting for production
 
