@@ -27,6 +27,7 @@ services:
       DB_HOST: db
       DB_NAME: dragon_trainer
       DB_PORT: 3306
+      ENV: DEV
     networks:
       - backend
     command: sh -c "sleep 9 && python main.py"

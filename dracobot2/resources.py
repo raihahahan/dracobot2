@@ -1,3 +1,10 @@
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+env = os.environ["ENV"]
+BOT_NAME = os.environ["TELEGRAM_BOT_NAME_DEV"] if env == "DEV" else os.environ["TELEGRAM_BOT_NAME_PROD"]
+
 # EMOJI UNICODE
 CAKE_EMOJI = u"\U0001F382"
 ROBOT_EMOJI = u"\U0001F916"
@@ -44,10 +51,19 @@ DELETE_KEY = u"delete"
 CANCEL_KEY = u"cancel"
 DONE_KEY = u"done"
 
+def comma_separate(str_list: list):
+    return ", ".join(str_list)
+
+CURRENT_MAINTAINERS = "Raihan and Wonje"
+PAST_MAINTAINERS = ["Daniel Lau", "Ji Cheng", "Shao Yi", "Bai Chuan", "Fiz, Youkuan", "Kang Ming", "Zhi Yu"]
+TECHNICAL_ASSISTANCE = "@raihahan or @jeonwonje"
+REACH_OUT_TO = "@notbingsu, @yukuleles, @xavierchia, @vitchun"
+
+
 # GREETINGS
 ABOUT_THE_BOT = DRAGON_EMOJI + " *About DracoBot* " + DRAGON_EMOJI + "\n\n" + CAKE_EMOJI + " Birthday: June 2017\n\n" +\
-    ROBOT_EMOJI + " Currently maintained by Daniel Lau\n\n" + SKULL_EMOJI +\
-    " Past Bot Developers: Ji Cheng, Shao Yi, Bai Chuan, Fiz, Youkuan, Kang Ming, Zhi Yu\n\n"
+    ROBOT_EMOJI + f" Currently maintained by {CURRENT_MAINTAINERS}\n\n" + SKULL_EMOJI +\
+    f" Past Bot Developers: {comma_separate(PAST_MAINTAINERS)}\n\n"
 ADMIN_GREETING = "Hello there, Administrator! What do you want to say to everyone?\n" +\
     "Whatever you submit from now on will be broadcasted to all users, be CAREFUL!\n" +\
     "Type /" + DONE_KEY + " to exit, once you have made your announcement."
@@ -68,7 +84,7 @@ HELP_MESSAGE = "Hello there, {}!\n\n" +\
     "2. <b>Delete message</b>: You can select a message and type /delete\n" +\
     "3. <b>Edit message</b>: You can edit your message to your dragon / trainer\n" +\
     "4. <b>Media files</b>: Supported files are <i>audio</i>, <i>document</i>, <i><b>photo</b></i>, <i><b>sticker</b></i>, <i>videos</i>, <i>video note</i> and <i>voice</i>\n\n" +\
-    "Please message @jeyvia if you need technical assistance!\n" +\
+    f"Please message {TECHNICAL_ASSISTANCE} if you need technical assistance!\n" +\
     "Thank you and we hope you'll have fun throughout this game! :)"
 GAME_RULES_MESSAGE = "Rules of Dragon and Trainer " + DRAGON_EMOJI + "\n\n" +\
     "Each of you who participated will be assigned a Trainer and a Dragon. " +\
@@ -83,7 +99,7 @@ GAME_RULES_MESSAGE = "Rules of Dragon and Trainer " + DRAGON_EMOJI + "\n\n" +\
     "3: Pranks are fine, but do take care of what your dragon says is <b>OFF LIMITS</b>\n\n" +\
     "<u>Dos</u> " + SMILE_EMOJI + "\n" +\
     "• Observe the Tolerance Levels your dragons have indicated.\n" +\
-    "• Gain consent from your dragon before entering their rooms. (You can ask using the @DragonandTrainerBot via the chat function)\n" +\
+    f"• Gain consent from your dragon before entering their rooms. (You can ask using the @{BOT_NAME} via the chat function)\n" +\
     "• Do take note of your dragon’s dislikes and OFF LIMITS details and adhere to them (Try to <b>avoid</b> doing anything your dragon dislikes, especially anything they have declared OFF LIMITS)\n" +\
     "• <b>Balance out the pranks with gifts - moderation is key!</b>\n" +\
     "• Try (your best) to <b>keep your identity hidden</b>.\n" +\
@@ -102,7 +118,7 @@ GAME_RULES_MESSAGE = "Rules of Dragon and Trainer " + DRAGON_EMOJI + "\n\n" +\
     "NO MOVING OF FURNITURE OUT OF THE ROOMS and AVOID MOVING of furniture\n" +\
     "And RESTRICT pranks to <b>YOUR OWN DRAGON</b> (avoid performing pranks on others’ dragons as any incidents that arise due to your unannounced pranks would implicate other trainers)\n\n" +\
     "Do adhere to the rules as stated above, as well as the basic housing regulations of RC4.\n\n" +\
-    "If you have any other questions, concerns or doubts, don’t be afraid to reach out to @moncherrin, @seanhanbaobao and @jeyvia! We hope you have fun and make new friends as well!\n\n" +\
+    f"If you have any other questions, concerns or doubts, don’t be afraid to reach out to {REACH_OUT_TO}! We hope you have fun and make new friends as well!\n\n" +\
     "Love,\n" +\
     "Draco House Comm" + BLUE_HEART_EMOJI
 WELCOME_MESSAGE = "Dear {name},\n\n\n"\
@@ -110,7 +126,7 @@ WELCOME_MESSAGE = "Dear {name},\n\n\n"\
     "\"Esteemed Trainer, you are tasked to train dragon ‘{dragon_name}’ for the next 2 and a half weeks. Slowly approach the dragon at unit {dragon_room_number} to tame it and teach it new skills.\n\n"\
     "Your dragon likes ‘{dragon_likes}’ but it really dislikes ‘{dragon_dislikes}‘.\n\n"\
     "‘{dragon_requests}' is stated as off limits. Take careful note of these as you venture on your quest to tame your dragon, for there may be consequences.\n\nThe difficulty of training is LEVEL {dragon_level:d}.\n\n\n"\
-    "We, @moncherrin, @seanhanbaobao and @jeyvia, will watch over all of you trainers throughout the training. Do contact us should you need assistance in taming your dragon.\n\n\n"\
+    f"We, {REACH_OUT_TO}, will watch over all of you trainers throughout the training. Do contact us should you need assistance in taming your dragon.\n\n\n"\
     "Set forth young one and be the best dragon tamer of AreSeaFore Draco.\"\n\n\n"\
     "*Game of Thrones Music Intensifies*"
 STATUS = "Trainer Status: {trainer_status}\n"\
