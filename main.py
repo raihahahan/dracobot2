@@ -13,8 +13,13 @@ import logging
 import time
 import math
 from dotenv import load_dotenv
-load_dotenv()
+from setup import createDatabase
 
+from dracobot2.config import SQL_ENGINE
+from dracobot2.models import *
+
+load_dotenv()
+createDatabase()
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
