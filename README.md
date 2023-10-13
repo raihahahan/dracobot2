@@ -16,7 +16,11 @@ There are 2 ways to run the bot: Docker or locally.
 
 ### Running the bot
 
-1. Run `docker compose -f docker-compose.{environment}.yml up -d` (change {environment} to dev or prod)
+1. Run `docker compose -f docker-compose.{environment}.yml up -d`
+
+- change {environment} to dev or prod
+- For prod, if you have made any new changes to the code, you will need to build the image first and change the image name under the "telegram-app" service in the docker compose file. See "Hosting for production" for more info.
+
 2. If it's the first time setting up, follow the steps under "Populating the database". Else, you can start testing out your bot.
 
 ### Stopping the bot
@@ -47,15 +51,27 @@ For production, you may consider building the telegram bot docker image and push
 2. Create a Docker account if not yet created (https://hub.docker.com/)
 3. Login to Docker Hub: `docker login`
 4. Tag your image: `docker tag your-image-name your-dockerhub-username/your-image-name:tag`
-5. Push your image: `docker push your-dockerhub-username/your-image-name:tag`
+5. Push your image: `docker push your-dockerhub-username/your-image-name:tag` (Make sure to test that this image works by running `docker-compose.prod.yml` with the new full image name before pushing)
 6. In `docker-compose.prod.yml`, replace the image name under `telegram-app` service to your `your-dockerhub-username/your-image-name:tag`
 7. You can then copy over the `docker-compose.yml` file to any production environments (make sure that the architecture [ARM, x64 etc.] works for your image. Use `docker inspect your-image-name` to identify the architecture). For Dragon & Trainer 2023, we host it on AWS EC2 instance with x64 architecture.
 
 ### Common bugs and troubleshooting
 
-- Error unpickling conversationbot: delete `conversationbot` file in the root directory
-- If anything goes wrong with the bot, it could either be due to the db or telegram-app service. You may use the following command to restart the containers: `docker restart container_name_or_id`
-- You may view the docker logs for troubleshooting using `docker logs -f container_name_or_id`
+1. Error unpickling conversationbot: delete `conversationbot` file in the root directory
+2. If anything goes wrong with the bot, it could either be due to the db or telegram-app service. You may use the following command to restart the containers: `docker restart container_name_or_id`
+3. You may view the docker logs for troubleshooting using `docker logs -f container_name_or_id`
+4. dns error (see below)
+
+```
+ERROR: failed to solve: failed to fetch oauth token: Post "https://auth.docker.io/token": dial tcp: lookup auth.docker.io on [::1]:53: read udp [::1]:63799->[::1]:53: read: connection refused
+```
+
+4.1. run the following in your terminal
+
+```
+export DOCKER_BUILDKIT=0
+export COMPOSE_DOCKER_CLI_BUILD=0
+```
 
 ## Run locally
 

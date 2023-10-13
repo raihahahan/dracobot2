@@ -5,13 +5,13 @@ services:
     image: mysql:latest
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: dragon_trainer
+      MYSQL_DATABASE: dragon_trainer_prod
     volumes:
-      - mysql_data:/var/lib/mysql
+      - mysql_data_prod:/var/lib/mysql
     networks:
       - backend
   telegram-app:
-    image: mraihandev/dracobot2-telegram-app:1.0.0
+    image: mraihandev/dracobot2-telegram-app:1.0.1
     depends_on:
       - db
     ports:
@@ -23,14 +23,15 @@ services:
       DB_USERNAME: ${DB_USERNAME_PROD}
       DB_PASSWORD: ${DB_PASSWORD_PROD}
       DB_HOST: db
-      DB_NAME: dragon_trainer
+      DB_NAME: dragon_trainer_prod
       DB_PORT: 3306
+      ENV: PROD
     networks:
       - backend
     command: sh -c "sleep 9 && python main.py"
 
 volumes:
-  mysql_data:
+  mysql_data_prod:
 
 networks:
   backend:
