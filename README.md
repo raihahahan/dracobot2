@@ -19,9 +19,9 @@ There are 2 ways to run the bot: Docker or locally.
 1. Run `docker compose -f docker-compose.{environment}.yml up -d`
 
 - change {environment} to dev or prod
-- For prod, if you have made any new changes to the code, you will need to build the image first and change the image name under the "telegram-app" service in the docker compose file. See "Hosting for production" for more info.
+- For prod, if you have made any new changes to the code, you will need to build the image first and change the image name under the "telegram-app" service in the docker compose file. See [Hosting for production](#hosting-for-production) for more info.
 
-2. If it's the first time setting up, follow the steps under "Populating the database". Else, you can start testing out your bot.
+2. If it's the first time setting up, follow the steps under [Populating the database](#populating-the-database). Else, you can start testing out your bot.
 
 ### Stopping the bot
 
