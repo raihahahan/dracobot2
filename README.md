@@ -1,6 +1,6 @@
-# dracobot2
+# Dragon & Trainer bot
 
-There are 2 ways to run the bot: Docker or locally.
+There are 2 ways to run the bot: Docker (recommended) or locally.
 
 ## Run on docker
 
