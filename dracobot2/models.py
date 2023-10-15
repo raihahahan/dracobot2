@@ -49,12 +49,12 @@ class MessageMapping(Base):
     __tablename__ = 'message_mapping'
 
     sender_message_id = Column(
-        Integer, primary_key=True, autoincrement=False, nullable=False)
-    sender_chat_id = Column(Integer, primary_key=True,
+        BigInteger, primary_key=True, autoincrement=False, nullable=False)
+    sender_chat_id = Column(BigInteger, primary_key=True,
                             autoincrement=False, nullable=False)
-    receiver_message_id = Column(Integer, primary_key=True, nullable=False)
-    receiver_chat_id = Column(Integer, primary_key=True, nullable=False)
-    receiver_caption_message_id = Column(Integer, nullable=True)
+    receiver_message_id = Column(BigInteger, primary_key=True, nullable=False)
+    receiver_chat_id = Column(BigInteger, primary_key=True, nullable=False)
+    receiver_caption_message_id = Column(BigInteger, nullable=True)
     deleted = Column(Boolean, nullable=False,
                      default=False, server_default="0")
     message_from = Column(Enum(Role), nullable=False)
