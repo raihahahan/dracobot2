@@ -1,7 +1,7 @@
 import enum
 from sqlalchemy.types import Enum
 from sqlalchemy.orm import relationship, backref
-from sqlalchemy import Column, Integer, String, ForeignKey, UnicodeText, Boolean
+from sqlalchemy import Column, Integer, String, ForeignKey, UnicodeText, Boolean, BigInteger
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
@@ -17,7 +17,7 @@ class User(Base):
     __tablename__ = 'users'
 
     id = Column(Integer, primary_key=True)
-    chat_id = Column(Integer, unique=True)
+    chat_id = Column(BigInteger, unique=True)
     tele_handle = Column(String(25), nullable=False, unique=True)
     tele_name = Column(String(100))
     dragon_id = Column(Integer, ForeignKey('users.id'), index=True)
