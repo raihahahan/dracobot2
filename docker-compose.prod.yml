@@ -11,7 +11,7 @@ services:
     networks:
       - backend
   telegram-app:
-    image: mraihandev/dracobot2-telegram-app:1.0.4
+    image: mraihandev/dracobot2-telegram-app:1.0.5
     depends_on:
       - db
     ports:
