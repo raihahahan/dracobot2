@@ -132,7 +132,7 @@ WELCOME_MESSAGE = "Dear {name},\n\n\n"\
     "{dragon_name} is a Commitment Level {dragon_level:d} dragon.\n"\
     "{dragon_name}'s likes include \"{dragon_likes}\".\n"\
     "{dragon_name}'s dislikes and no-gos include \"{dragon_dislikes}\".\n"\
-    "{dragon_name}'s consent details: {dragon_requests}\n\n"\
+    "{dragon_name} {dragon_requests}\n\n"\
     "Take careful note of these as you venture on your quest to tame your dragon, for there may be consequences.\n\n"\
     f"We, {REACH_OUT_TO}, will watch over all of you trainers throughout the training. Do contact us should you need assistance in taming your dragon.\n\n\n"\
     "Set forth young one and be the best dragon tamer in the Land Above All.\n\n\n"
