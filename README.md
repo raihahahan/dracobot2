@@ -1,6 +1,6 @@
-# dracobot2
+# Dragon & Trainer bot
 
-There are 2 ways to run the bot: Docker or locally.
+There are 2 ways to run the bot: Docker (recommended) or locally.
 
 ## Run on docker
 
@@ -19,9 +19,9 @@ There are 2 ways to run the bot: Docker or locally.
 1. Run `docker compose -f docker-compose.{environment}.yml up -d`
 
 - change {environment} to dev or prod
-- For prod, if you have made any new changes to the code, you will need to build the image first and change the image name under the "telegram-app" service in the docker compose file. See "Hosting for production" for more info.
+- For prod, if you have made any new changes to the code, you will need to build the image first and change the image name under the "telegram-app" service in the docker compose file. See [Hosting for production](#hosting-for-production) for more info.
 
-2. If it's the first time setting up, follow the steps under "Populating the database". Else, you can start testing out your bot.
+2. If it's the first time setting up, follow the steps under [Populating the database](#populating-the-database). Else, you can start testing out your bot.
 
 ### Stopping the bot
 
@@ -41,11 +41,11 @@ There are 2 ways to run the bot: Docker or locally.
 2. Run `docker ps`
 3. Copy the container name of the database service
 4. Run `docker exec -it {container-name} mysql -u root -p`. Enter the database password when prompted.
-5. In `mysql` client, run `USE dragon_trainer;` followed by `SHOW TABLES;`. The tables should be properly configured if telegram-app service runs successfully.
+5. In `mysql` client, run `USE dragon_trainer;` (`USE dragon_trainer_prod` for production) followed by `SHOW TABLES;`. The tables should be properly configured if telegram-app service runs successfully.
 
 ### Hosting for production
 
-For production, you may consider building the telegram bot docker image and pushing it to Docker Hub. `docker-compose.prod.yml` then pulls this image. This version uses `mraihandev/dracobot2-telegram-app` image. You may build and use your own image.
+For production, you will need to build the telegram bot docker image and push it to Docker Hub. `docker-compose.prod.yml` then pulls this image. This version uses `mraihandev/dracobot2-telegram-app` image. You may build and use your own image.
 
 1. Build the image: `docker build -t your-image-name .`
 2. Create a Docker account if not yet created (https://hub.docker.com/)

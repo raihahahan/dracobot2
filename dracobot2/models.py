@@ -1,7 +1,7 @@
 import enum
 from sqlalchemy.types import Enum
 from sqlalchemy.orm import relationship, backref
-from sqlalchemy import Column, Integer, String, ForeignKey, UnicodeText, Boolean
+from sqlalchemy import Column, Integer, String, ForeignKey, UnicodeText, Boolean, BigInteger
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
@@ -17,7 +17,7 @@ class User(Base):
     __tablename__ = 'users'
 
     id = Column(Integer, primary_key=True)
-    chat_id = Column(Integer, unique=True)
+    chat_id = Column(BigInteger, unique=True)
     tele_handle = Column(String(25), nullable=False, unique=True)
     tele_name = Column(String(100))
     dragon_id = Column(Integer, ForeignKey('users.id'), index=True)
@@ -49,12 +49,12 @@ class MessageMapping(Base):
     __tablename__ = 'message_mapping'
 
     sender_message_id = Column(
-        Integer, primary_key=True, autoincrement=False, nullable=False)
-    sender_chat_id = Column(Integer, primary_key=True,
+        BigInteger, primary_key=True, autoincrement=False, nullable=False)
+    sender_chat_id = Column(BigInteger, primary_key=True,
                             autoincrement=False, nullable=False)
-    receiver_message_id = Column(Integer, primary_key=True, nullable=False)
-    receiver_chat_id = Column(Integer, primary_key=True, nullable=False)
-    receiver_caption_message_id = Column(Integer, nullable=True)
+    receiver_message_id = Column(BigInteger, primary_key=True, nullable=False)
+    receiver_chat_id = Column(BigInteger, primary_key=True, nullable=False)
+    receiver_caption_message_id = Column(BigInteger, nullable=True)
     deleted = Column(Boolean, nullable=False,
                      default=False, server_default="0")
     message_from = Column(Enum(Role), nullable=False)
