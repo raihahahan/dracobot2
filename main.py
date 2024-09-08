@@ -64,9 +64,8 @@ def db_session(method):
 def start(update, context, session):
     chat_id = update.message.chat_id
     user = update.message.from_user
-
     user_db = session.query(User).filter(
-        or_(User.tele_handle == user.username, User.chat_id == chat_id)).first()
+        or_(User.tele_handle == "@" + user.username, User.chat_id == chat_id)).first()
 
     if user_db is not None:
         is_new_user = not user_db.registered
@@ -397,7 +396,7 @@ def main():
     # Make sure to set use_context=True to use the new context based callbacks
     # Post version 12 this will no longer be necessary
     pp = PicklePersistence(filename='conversationbot')
-    updater = Updater(TOKEN, persistence=pp, use_context=True)
+    updater = Updater(TOKEN)
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
@@ -499,7 +498,7 @@ def main():
         fallbacks=[MessageHandler(Filters.all, unknown_message)],
 
         name="main_conversation",
-        persistent=True,
+        persistent=False
     )
 
     dp.add_error_handler(_error, run_async=True)

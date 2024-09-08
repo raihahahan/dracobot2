@@ -124,19 +124,19 @@ GAME_RULES_MESSAGE = "Rules of Dragon and Trainer " + DRAGON_EMOJI + "\n\n" +\
 WELCOME_MESSAGE = "Dear {name},\n\n\n"\
     "You woke up dizzy in the highest floors of a building known as AreSeaFore and you are unsure of how you were transported here. Next to you lies a piece of paper which reads:\n\n\n"\
     "\"Esteemed Trainer, you are tasked to train dragon ‘{dragon_name}’ for the next 2 and a half weeks. Slowly approach the dragon at unit {dragon_room_number} to tame it and teach it new skills.\n\n"\
-    "Your dragon likes ‘{dragon_likes}’ but it really dislikes ‘{dragon_dislikes}‘.\n\n"\
+    "Your dragon has the following likes and dislikes: {dragon_likes}.\n\n"\
     "‘{dragon_requests}' is stated as off limits. Take careful note of these as you venture on your quest to tame your dragon, for there may be consequences.\n\nThe difficulty of training is LEVEL {dragon_level:d}.\n\n\n"\
     f"We, {REACH_OUT_TO}, will watch over all of you trainers throughout the training. Do contact us should you need assistance in taming your dragon.\n\n\n"\
     "Set forth young one and be the best dragon tamer of AreSeaFore Draco.\"\n\n\n"\
-    "*Game of Thrones Music Intensifies*"
+    "*Game of Thrones Music Intensifies*\n\n\n"\
+    "IMPORTANT: PLEASE ASK YOUR DRAGON FIRST FOR CONSENT BEFORE ENTERING THEIR ROOM."
 STATUS = "Trainer Status: {trainer_status}\n"\
     "Dragon Status: {dragon_status}\n"
 DRAGON_DETAILS = "Dragon Details " + DRAGON_EMOJI + "\n\n"\
     "Name: {name}\n"\
     "Unit: {room_number}\n"\
     "Level: {level:d}\n\n"\
-    "Likes:\n{likes}\n\n"\
-    "Dislikes:\n{dislikes}\n\n"\
+    "Likes and Dislikes:\n{likes}\n\n"\
     "Off Limits:\n{requests}\n\n"
 TRAINER_DETAILS = "Trainer Details " + TRAINER_EMOJI + SPARKLE_EMOJI + "\n\n"\
     "Name: {name}\n"\

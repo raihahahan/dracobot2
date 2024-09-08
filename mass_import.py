@@ -14,12 +14,12 @@ def get_row_info(cur_row):
     index = int(cur_row[0])
     name = cur_row[1]
     handle = cur_row[2]
-    likes = cur_row[3]
-    dislikes = cur_row[4]
-    room_number = cur_row[5]
-    requests = cur_row[6]
-    level = int(cur_row[7])
-    dragon_no = int(cur_row[8])
+    likes = cur_row[6]
+    dislikes = cur_row[7]
+    room_number = cur_row[8]
+    requests = cur_row[9]
+    level = int(cur_row[3][-1])
+    dragon_no = int(cur_row[4])
     return {
         'index': index,
         'name': name,
