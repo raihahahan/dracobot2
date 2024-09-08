@@ -57,7 +57,7 @@ def comma_separate(str_list: list):
 CURRENT_MAINTAINERS = "Raihan"
 PAST_MAINTAINERS = ["Daniel Lau", "Ji Cheng", "Shao Yi", "Bai Chuan", "Fiz, Youkuan", "Kang Ming", "Zhi Yu", "Jeon Wonje"]
 TECHNICAL_ASSISTANCE = "@raihahan"
-REACH_OUT_TO = "@szechuann, @dumpriing, @samueltqh30"
+REACH_OUT_TO = "@szechuann, @dumpriing, @samueltqh30, @chloyeeeet, @wilbert_ck"
 
 
 # GREETINGS
