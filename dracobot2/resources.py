@@ -54,10 +54,10 @@ DONE_KEY = u"done"
 def comma_separate(str_list: list):
     return ", ".join(str_list)
 
-CURRENT_MAINTAINERS = "Raihan and Wonje"
-PAST_MAINTAINERS = ["Daniel Lau", "Ji Cheng", "Shao Yi", "Bai Chuan", "Fiz, Youkuan", "Kang Ming", "Zhi Yu"]
-TECHNICAL_ASSISTANCE = "@raihahan or @jeonwonje"
-REACH_OUT_TO = "@notbingsu, @yukuleles, @xavierchia, @vitchun"
+CURRENT_MAINTAINERS = "Raihan"
+PAST_MAINTAINERS = ["Daniel Lau", "Ji Cheng", "Shao Yi", "Bai Chuan", "Fiz, Youkuan", "Kang Ming", "Zhi Yu", "Jeon Wonje"]
+TECHNICAL_ASSISTANCE = "@raihahan"
+REACH_OUT_TO = "@szechuann, @dumpriing, @samueltqh30"
 
 
 # GREETINGS
